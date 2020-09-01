@@ -1,4 +1,4 @@
--- DROP FUNCTION converttocurriculum;
+-- DROP FUNCTION createDefFileFromCourseTopic;
 CREATE OR REPLACE FUNCTION createDefFileFromCourseTopic(INT) RETURNS TEXT LANGUAGE plpgsql AS $$
 DECLARE topic_row course_topic_content %ROWTYPE;
 DECLARE result_content text := '';
@@ -51,5 +51,5 @@ BEGIN
 	RETURN result_content;
 END;
 $$;
-SELECT *
-FROM createDefFileFromCourseTopic(1570);
+
+-- SELECT * FROM createDefFileFromCourseTopic(1570);
