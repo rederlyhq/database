@@ -116,7 +116,9 @@ BEGIN
                         curriculum_topic_assessment_info_show_total_grade_immediately,
                         curriculum_topic_assessment_info_hide_problems_after_finish,
                         curriculum_topic_assessment_info_randomize_order,
-                        curriculum_topic_assessment_info_active
+                        curriculum_topic_assessment_info_active,
+                        created_at,
+                        updated_at
                     ) VALUES (
                         DEFAULT,
                         resultant_curriculum_topic_content_id,
@@ -130,7 +132,9 @@ BEGIN
                         course_topic_assessment_row.topic_assessment_info_show_total_grade_immediately,
                         course_topic_assessment_row.topic_assessment_info_hide_problems_after_finish,
                         course_topic_assessment_row.topic_assessment_info_randomize_order,
-                        course_topic_assessment_row.topic_assessment_info_active
+                        course_topic_assessment_row.topic_assessment_info_active,
+						NOW(),
+						NOW()
                     );
                 END IF;
 
@@ -175,13 +179,17 @@ BEGIN
                         curriculum_topic_question_id,
                         curriculum_question_assessment_info_random_seed_set,
                         curriculum_question_assessment_info_additional_problem_paths,
-                        curriculum_question_assessment_info_active
+                        curriculum_question_assessment_info_active,
+					    created_at,
+					    updated_at
                     ) VALUES (
                         DEFAULT,
                         resultant_curriculum_topic_question_id,
                         course_question_assessment_row.course_question_assessment_info_random_seed_set,
                         course_question_assessment_row.course_question_assessment_info_additional_problem_paths,
-                        course_question_assessment_row.course_question_assessment_info_active
+                        course_question_assessment_row.course_question_assessment_info_active,
+						NOW(),
+						NOW()
                     );
                 END IF;
               END LOOP;
