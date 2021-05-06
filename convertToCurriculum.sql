@@ -82,7 +82,8 @@ BEGIN
                  curriculum_topic_content_active,
                  curriculum_topic_content_order,
                  created_at,
-                 updated_at
+                 updated_at,
+                 curriculum_topic_content_description
              )
              VALUES
              (
@@ -93,7 +94,8 @@ BEGIN
                  topic_record.course_topic_content_active,
                  topic_record.course_topic_content_order,
                  NOW(),
-                 NOW()
+                 NOW(),
+                 topic_record.course_topic_content_description
              )
              RETURNING curriculum_topic_content_id INTO resultant_curriculum_topic_content_id;
 
